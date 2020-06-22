@@ -1,21 +1,23 @@
 <template>
   <header class="header">
-    <nav class="header__nav d-flex">
-      <nuxt-link class="mr-auto" to="/">
-        <img class="header__img" src="../assets/images/astronaut.svg" alt />
-      </nuxt-link>
-      <ul class="header__list">
-        <li class="header__item" :class="{ 'is-active': $route.name === 'blog' }">
-          <nuxt-link to="/blog">DIÁRIO DE BORDO</nuxt-link>
-        </li>
-        <li class="header__item" :class="{ 'is-active': $route.name === 'projetos' }">
-          <nuxt-link to="/projetos">PROJETOS</nuxt-link>
-        </li>
-        <li class="header__item" :class="{ 'is-active': $route.name === 'sobre' }">
-          <nuxt-link to="/sobre">SOBRE</nuxt-link>
-        </li>
-      </ul>
-    </nav>
+    <div class="container-site">
+      <nav class="header__nav d-flex">
+        <nuxt-link class="mr-auto" to="/">
+          <img class="header__img" src="../assets/images/astronaut.svg" alt />
+        </nuxt-link>
+        <ul class="header__list">
+          <li class="header__item" :class="{ 'is-active': $route.name === 'blog' }">
+            <nuxt-link to="/blog">DIÁRIO DE BORDO</nuxt-link>
+          </li>
+          <li class="header__item" :class="{ 'is-active': $route.name === 'projetos' }">
+            <nuxt-link to="/projetos">PROJETOS</nuxt-link>
+          </li>
+          <li class="header__item" :class="{ 'is-active': $route.name === 'sobre' }">
+            <nuxt-link to="/sobre">SOBRE</nuxt-link>
+          </li>
+        </ul>
+      </nav>
+    </div>
   </header>
 </template>
 

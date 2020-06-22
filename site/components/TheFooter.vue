@@ -1,9 +1,11 @@
 <template>
   <footer class="footer">
-    <nav class="footer__nav">
-      <p class="footer__site-name">vilasboas.dev</p>
-      <social-link />
-    </nav>
+    <div class="container-site">
+      <nav class="footer__nav">
+        <p class="footer__site-name">vilasboas.dev</p>
+        <social-link />
+      </nav>
+    </div>
   </footer>
 </template>
 

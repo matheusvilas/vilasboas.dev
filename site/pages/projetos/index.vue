@@ -1,7 +1,7 @@
 <template>
-  <section class="projects">
+  <section class="projects section">
     <div class="container">
-      <h2 class="project__title">Projetos mais recentes</h2>
+      <h2 class="section__title">Projetos mais recentes</h2>
       <ul class="project__group" v-if="projects">
         <li v-for="project in projects" :key="project.id">
           <project-item
@@ -62,22 +62,23 @@ export default class Project extends Vue {
       slug: "slug-05",
       image: require("../../assets/images/project-image.jpg"),
       title: "slug 05"
+    },
+    {
+      id: "05",
+      slug: "slug-05",
+      image: require("../../assets/images/project-image.jpg"),
+      title: "slug 05"
     }
   ];
 }
 </script>
 
 <style lang="scss" scoped>
-.projects {
-  &__title {
-    font-size: 18px;
-    text-align: left;
-    color: #f7f4f4;
-  }
-
+.project {
   &__group {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
   }
 }
 </style>

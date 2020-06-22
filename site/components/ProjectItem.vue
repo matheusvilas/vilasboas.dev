@@ -1,10 +1,10 @@
 <template>
-  <div class="project-item">
+  <nuxt-link to="/projetos" class="project-item">
     <img class="project-item__bg" :src="projectImage" :alt="projectTitle" />
     <div class="project-item__info">
       <p class="project-item__title">{{projectTitle}}</p>
     </div>
-  </div>
+  </nuxt-link>
 </template>
 
 <script lang="ts">
@@ -26,6 +26,8 @@ export default class ProjectItem extends Vue {
   height: 214px;
   position: relative;
   overflow: hidden;
+  margin-bottom: 40px;
+  display: block;
 
   &__bg {
     position: absolute;
@@ -34,6 +36,7 @@ export default class ProjectItem extends Vue {
     width: 100%;
     height: 100%;
     object-fit: contain;
+    transition: all 300ms ease-in-out;
   }
 
   &__info {
@@ -42,25 +45,31 @@ export default class ProjectItem extends Vue {
     left: 0;
     height: 50px;
     width: 100%;
-    background: linear-gradient(
-      180deg,
-      transparent 62%,
-      rgba(0, 0, 0, 0.00345888) 63.94%,
-      rgba(0, 0, 0, 0.014204) 65.89%,
-      rgba(0, 0, 0, 0.0326639) 67.83%,
-      rgba(0, 0, 0, 0.0589645) 69.78%,
-      rgba(0, 0, 0, 0.0927099) 71.72%,
-      rgba(0, 0, 0, 0.132754) 73.67%,
-      rgba(0, 0, 0, 0.177076) 75.61%,
-      rgba(0, 0, 0, 0.222924) 77.56%,
-      rgba(0, 0, 0, 0.267246) 79.5%,
-      rgba(0, 0, 0, 0.30729) 81.44%,
-      rgba(0, 0, 0, 0.341035) 83.39%,
-      rgba(0, 0, 0, 0.367336) 85.33%,
-      rgba(0, 0, 0, 0.385796) 87.28%,
-      rgba(0, 0, 0, 0.396541) 89.22%,
-      rgba(0, 0, 0, 0.4) 91.17%
-    );
+    opacity: 0;
+    background: rgba(#000000, 0.6);
+    transition: all 300ms ease-in-out;
+  }
+
+  &__title {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    font-size: 18px;
+    padding-left: 13px;
+    color: white;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  &:hover,
+  &:focus {
+    .project-item__info {
+      opacity: 1;
+    }
+
+    .project-item__bg {
+      transform: scale(1.2);
+    }
   }
 }
 </style>
