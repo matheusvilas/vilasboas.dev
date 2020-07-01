@@ -91,7 +91,7 @@ export default class Blog extends Vue {
     },
     {
       id: "06",
-      slug: "slug-01",
+      slug: "slug-06",
       image: require("../../assets/images/js.png"),
       title: "slug 01",
       description:

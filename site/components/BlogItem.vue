@@ -58,6 +58,7 @@ export default class BlogItem extends Vue {
   &__content {
     padding: 16px 24px;
     width: 100%;
+    background: #000000c9;
 
     &--upper {
       display: flex;
