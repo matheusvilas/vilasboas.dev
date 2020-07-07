@@ -1,28 +1,28 @@
 <template>
   <ul class="social-link">
     <li class="social-link__link">
-      <a href="">
-        <img src="../assets/images/facebook.svg" alt="" />
+      <a href>
+        <img src="../assets/images/facebook.svg" alt />
       </a>
     </li>
     <li class="social-link__link">
-      <a href="">
-        <img src="../assets/images/facebook.svg" alt="" />
+      <a href>
+        <img src="../assets/images/facebook.svg" alt />
       </a>
     </li>
     <li class="social-link__link">
-      <a href="">
-        <img src="../assets/images/facebook.svg" alt="" />
+      <a href>
+        <img src="../assets/images/facebook.svg" alt />
       </a>
     </li>
     <li class="social-link__link">
-      <a href="">
-        <img src="../assets/images/facebook.svg" alt="" />
+      <a href>
+        <img src="../assets/images/facebook.svg" alt />
       </a>
     </li>
     <li class="social-link__link">
-      <a href="">
-        <img src="../assets/images/facebook.svg" alt="" />
+      <a href>
+        <img src="../assets/images/facebook.svg" alt />
       </a>
     </li>
   </ul>
@@ -42,7 +42,18 @@ export default class SocialLink extends Vue {}
   align-items: center;
 
   &__link {
-    margin-left: 15px;
+    margin-right: 15px;
+
+    a {
+      width: 32px;
+      height: 32px;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+    }
   }
 }
 </style>

@@ -3,7 +3,7 @@
     <div class="modal__background"></div>
     <div class="modal__content">
       <div class="modal__button">
-        <button onPress />
+        <button class="modal__button-img" :click="handleCloseModal" />
       </div>
       <div class="modal-container">
         <div class="modal__header">
@@ -94,6 +94,9 @@ export default class Modal extends Vue {}
       font-size: 18px;
       font-weight: 400;
       max-width: 480px;
+      max-height: 250px;
+      height: 250px;
+      overflow-y: auto;
     }
   }
 
@@ -108,6 +111,27 @@ export default class Modal extends Vue {}
 
   &__header {
     margin-bottom: 30px;
+  }
+
+  &__content {
+    position: relative;
+  }
+
+  &__button {
+    position: absolute;
+    top: -35px;
+    right: -38px;
+
+    &-img {
+      background: url("../assets/images/icon-close.svg");
+      background-repeat: no-repeat;
+      width: 30px;
+      height: 30px;
+      border: 0;
+      outline: 0;
+      padding: 0;
+      background-size: contain;
+    }
   }
 
   &__footer {
