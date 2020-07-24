@@ -12,7 +12,7 @@
         </li>
       </ul>
     </div>
-    <modal />
+    <modal @handleCloseModal="closeModal" />
   </section>
 </template>
 
@@ -38,8 +38,8 @@ interface IProjectItem {
 @Component({
   components: {
     ProjectItem,
-    Modal
-  }
+    Modal,
+  },
 })
 export default class Project extends Vue {
   projects: IProjectItem[] = [
@@ -48,86 +48,90 @@ export default class Project extends Vue {
       slug: "slug-01",
       image: {
         thumb: require("../../assets/images/project-image.jpg"),
-        banner: require("../../assets/images/banner-example.png")
+        banner: require("../../assets/images/banner-example.png"),
       },
       description: `<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc accumsan in urna nec dignissim.<br/>
                     Proin in imperdiet mi. Suspendisse nec lorem lobortis, pulvinar turpis sed, efficitur tortor. <br/>
                     Curabitur bibendum ullamcorper mauris quis porta. Integer pretium, lectus eget rutrum tristique, nisl turpis faucibus odio</p>`,
       title: "slug 01",
       stack: ["vue", "scss", "html"],
-      link: "https://orango.dev"
+      link: "https://orango.dev",
     },
     {
       id: "02",
       slug: "slug-02",
       image: {
         thumb: require("../../assets/images/project-image.jpg"),
-        banner: require("../../assets/images/banner-example.png")
+        banner: require("../../assets/images/banner-example.png"),
       },
       description: `<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc accumsan in urna nec dignissim.<br/>
                     Proin in imperdiet mi. Suspendisse nec lorem lobortis, pulvinar turpis sed, efficitur tortor. <br/>
                     Curabitur bibendum ullamcorper mauris quis porta. Integer pretium, lectus eget rutrum tristique, nisl turpis faucibus odio</p>`,
       title: "slug 01",
       stack: ["vue", "scss", "html"],
-      link: "https://orango.dev"
+      link: "https://orango.dev",
     },
     {
       id: "03",
       slug: "slug-03",
       image: {
         thumb: require("../../assets/images/project-image.jpg"),
-        banner: require("../../assets/images/banner-example.png")
+        banner: require("../../assets/images/banner-example.png"),
       },
       description: `<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc accumsan in urna nec dignissim.<br/>
                     Proin in imperdiet mi. Suspendisse nec lorem lobortis, pulvinar turpis sed, efficitur tortor. <br/>
                     Curabitur bibendum ullamcorper mauris quis porta. Integer pretium, lectus eget rutrum tristique, nisl turpis faucibus odio</p>`,
       title: "slug 01",
       stack: ["vue", "scss", "html"],
-      link: "https://orango.dev"
+      link: "https://orango.dev",
     },
     {
       id: "04",
       slug: "slug-04",
       image: {
         thumb: require("../../assets/images/project-image.jpg"),
-        banner: require("../../assets/images/banner-example.png")
+        banner: require("../../assets/images/banner-example.png"),
       },
       description: `<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc accumsan in urna nec dignissim.<br/>
                     Proin in imperdiet mi. Suspendisse nec lorem lobortis, pulvinar turpis sed, efficitur tortor. <br/>
                     Curabitur bibendum ullamcorper mauris quis porta. Integer pretium, lectus eget rutrum tristique, nisl turpis faucibus odio</p>`,
       title: "slug 01",
       stack: ["vue", "scss", "html"],
-      link: "https://orango.dev"
+      link: "https://orango.dev",
     },
     {
       id: "05",
       slug: "slug-05",
       image: {
         thumb: require("../../assets/images/project-image.jpg"),
-        banner: require("../../assets/images/banner-example.png")
+        banner: require("../../assets/images/banner-example.png"),
       },
       description: `<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc accumsan in urna nec dignissim.<br/>
                     Proin in imperdiet mi. Suspendisse nec lorem lobortis, pulvinar turpis sed, efficitur tortor. <br/>
                     Curabitur bibendum ullamcorper mauris quis porta. Integer pretium, lectus eget rutrum tristique, nisl turpis faucibus odio</p>`,
       title: "slug 01",
       stack: ["vue", "scss", "html"],
-      link: "https://orango.dev"
+      link: "https://orango.dev",
     },
     {
       id: "06",
       slug: "slug-06",
       image: {
         thumb: require("../../assets/images/project-image.jpg"),
-        banner: require("../../assets/images/banner-example.png")
+        banner: require("../../assets/images/banner-example.png"),
       },
       description: `<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc accumsan in urna nec dignissim.<br/>
                     Proin in imperdiet mi. Suspendisse nec lorem lobortis, pulvinar turpis sed, efficitur tortor. <br/>
                     Curabitur bibendum ullamcorper mauris quis porta. Integer pretium, lectus eget rutrum tristique, nisl turpis faucibus odio</p>`,
       title: "slug 01",
       stack: ["vue", "scss", "html"],
-      link: "https://orango.dev"
-    }
+      link: "https://orango.dev",
+    },
   ];
+
+  closeModal() {
+    console.log("emited");
+  }
 }
 </script>
 

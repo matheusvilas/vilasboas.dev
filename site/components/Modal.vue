@@ -3,7 +3,7 @@
     <div class="modal__background"></div>
     <div class="modal__content">
       <div class="modal__button">
-        <button class="modal__button-img" :click="handleCloseModal" />
+        <button class="modal__button-img" v-on:click="handleCloseModal" />
       </div>
       <div class="modal-container">
         <div class="modal__header">
@@ -39,13 +39,18 @@
 </template>
 
 <script lang="ts">
-import { Vue, Component } from "vue-property-decorator";
+import { Vue, Component, Emit } from "vue-property-decorator";
 import Stack from "./Stack.vue";
 
 @Component({
-  components: { Stack }
+  components: { Stack },
 })
-export default class Modal extends Vue {}
+export default class Modal extends Vue {
+  @Emit()
+  handleCloseModal() {
+    return true;
+  }
+}
 </script>
 
 <style lang="scss" scoped>
