@@ -1,22 +1,26 @@
 <template>
-  <nuxt-link to="/projetos" class="project-item">
-    <img class="project-item__bg" :src="projectImage" :alt="projectTitle" />
+  <button class="project-item" v-on:click="handlePress" v-if="infos">
+    <img class="project-item__bg" :src="infos.image.thumb" :alt="infos.title" />
     <div class="project-item__info">
-      <p class="project-item__title">{{projectTitle}}</p>
+      <p class="project-item__title">{{infos.title}}</p>
     </div>
-  </nuxt-link>
+  </button>
 </template>
 
 <script lang="ts">
-import { Vue, Component, Prop } from "vue-property-decorator";
+import { Vue, Component, Prop, Emit } from "vue-property-decorator";
+import { IProjectItem } from "../types";
 
 @Component({
-  components: {}
+  components: {},
 })
 export default class ProjectItem extends Vue {
-  @Prop() projectSlug?: string;
-  @Prop() projectImage?: string;
-  @Prop() projectTitle?: string;
+  @Prop() infos!: IProjectItem;
+
+  @Emit()
+  handlePress() {
+    return this.infos.id;
+  }
 }
 </script>
 
@@ -28,6 +32,7 @@ export default class ProjectItem extends Vue {
   overflow: hidden;
   margin-bottom: 40px;
   display: block;
+  border: none;
 
   &__bg {
     position: absolute;

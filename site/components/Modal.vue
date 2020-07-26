@@ -1,5 +1,5 @@
 <template>
-  <article class="modal">
+  <article class="modal" :class="{'is-showing': isModalShowing}">
     <div class="modal__background"></div>
     <div class="modal__content">
       <div class="modal__button">
@@ -7,28 +7,20 @@
       </div>
       <div class="modal-container">
         <div class="modal__header">
-          <h2 class="modal__title">Site Institucional Schin</h2>
+          <h2 class="modal__title">{{title}}</h2>
           <picture class="modal__banner">
-            <img
-              :src="require('../assets/images/banner-example.png')"
-              alt="Flowers"
-              style="width:auto;"
-            />
+            <img :src="img" alt="Flowers" style="width:auto;" />
           </picture>
         </div>
         <div class="modal__body">
-          <q>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc accumsan in urna nec dignissim.
-            Proin in imperdiet mi. Suspendisse nec lorem lobortis, pulvinar turpis sed, efficitur tortor.
-            Curabitur bibendum ullamcorper mauris quis porta. Integer pretium, lectus eget rutrum tristique, nisl turpis faucibus odio
-          </q>
+          <q>{{description}}</q>
           <div class="modal__stack">
             <p>Stack</p>
             <stack />
           </div>
         </div>
         <div class="modal__footer">
-          <a href="google.com">
+          <a :href="link">
             Visitar
             <img src="../assets/images/chevron-right.svg" alt />
           </a>
@@ -39,16 +31,43 @@
 </template>
 
 <script lang="ts">
-import { Vue, Component, Emit } from "vue-property-decorator";
+import { Vue, Component, Emit, Prop } from "vue-property-decorator";
 import Stack from "./Stack.vue";
+import { IProjectModal } from "../types";
 
 @Component({
   components: { Stack },
 })
 export default class Modal extends Vue {
+  @Prop() modal!: IProjectModal;
+
   @Emit()
   handleCloseModal() {
     return true;
+  }
+
+  get isModalShowing() {
+    return this.modal.isShowing;
+  }
+
+  get title() {
+    return this.modal.title;
+  }
+
+  get img() {
+    return this.modal.img;
+  }
+
+  get description() {
+    return this.modal.description;
+  }
+
+  get stack() {
+    return this.modal.stack;
+  }
+
+  get link() {
+    return this.modal.link;
   }
 }
 </script>
@@ -60,10 +79,8 @@ export default class Modal extends Vue {
   left: 0;
   bottom: 0;
   right: 0;
-
   width: 100%;
   height: 100%;
-
   display: block;
 
   &-container {
@@ -126,6 +143,7 @@ export default class Modal extends Vue {
     position: absolute;
     top: -35px;
     right: -38px;
+    cursor: pointer;
 
     &-img {
       background: url("../assets/images/icon-close.svg");
@@ -168,6 +186,36 @@ export default class Modal extends Vue {
     left: 50%;
     transform: translateX(-50%);
     border-radius: 15px;
+  }
+}
+
+// Animation
+.modal {
+  pointer-events: none;
+
+  &__content {
+    transform: scale(0.7) translateY(200px) translateX(-50%);
+    transition: all 300ms ease-in-out;
+    opacity: 0;
+  }
+
+  &__background {
+    opacity: 0;
+    transition: all 300ms ease-in-out;
+  }
+
+  &.is-showing {
+    transform: scale(1) translateY(0);
+    pointer-events: all;
+
+    .modal__content {
+      transform: scale(1) translateY(0) translateX(-50%);
+      opacity: 1;
+    }
+
+    .modal__background {
+      opacity: 1;
+    }
   }
 }
 </style>

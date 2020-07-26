@@ -4,15 +4,11 @@
       <h2 class="section__title">Projetos mais recentes</h2>
       <ul class="project__group" v-if="projects">
         <li v-for="project in projects" :key="project.id">
-          <project-item
-            :projectSlug="project.slug"
-            :projectImage="project.image.thumb"
-            :projectTitle="project.title"
-          />
+          <project-item :infos="project" @handle-press="handlePress" />
         </li>
       </ul>
     </div>
-    <modal @handleCloseModal="closeModal" />
+    <modal v-if="modal" :modal="modal" @handle-close-modal="toggleModal" />
   </section>
 </template>
 
@@ -21,19 +17,7 @@ declare var require: any;
 import { Vue, Component } from "vue-property-decorator";
 import ProjectItem from "../../components/ProjectItem.vue";
 import Modal from "../../components/Modal.vue";
-
-interface IProjectItem {
-  id: string;
-  title: string;
-  slug: string;
-  image: {
-    thumb: string;
-    banner: string;
-  };
-  description: string;
-  stack: string[];
-  link: string;
-}
+import { IProjectItem, IProjectModal } from "@/types";
 
 @Component({
   components: {
@@ -128,9 +112,31 @@ export default class Project extends Vue {
       link: "https://orango.dev",
     },
   ];
+  modal: IProjectModal = {
+    isShowing: false,
+    title: "",
+    img: "",
+    description: "",
+    stack: [],
+    link: "",
+  };
 
-  closeModal() {
-    console.log("emited");
+  handlePress(id: string) {
+    const chosenProject = this.projects.find((project) => project.id === id);
+    if (chosenProject) {
+      this.modal = {
+        isShowing: true,
+        title: chosenProject.title,
+        img: chosenProject.image.banner,
+        description: chosenProject.description,
+        stack: chosenProject.stack,
+        link: chosenProject.link,
+      };
+    }
+  }
+
+  toggleModal() {
+    if (this.modal) this.modal.isShowing = !this.modal.isShowing;
   }
 }
 </script>
