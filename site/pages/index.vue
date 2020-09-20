@@ -32,6 +32,10 @@ export default Vue.extend({
 
 <style lang="scss" scoped>
 .home {
+  @include media-breakpoint-down(md) {
+    height: 667px;
+  }
+
   .container {
     display: flex;
   }
@@ -39,6 +43,16 @@ export default Vue.extend({
   &__astronaut {
     opacity: 0.6;
     pointer-events: none;
+
+    @include media-breakpoint-down(md) {
+      position: absolute;
+      left: 0;
+      z-index: -1;
+      max-width: 100%;
+      object-fit: none;
+      height: 100%;
+      object-position: left;
+    }
   }
 
   &__title {

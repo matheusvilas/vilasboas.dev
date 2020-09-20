@@ -26,6 +26,13 @@ export default class TheFooter extends Vue {}
     height: 160px;
     display: flex;
     justify-content: space-between;
+    @include media-breakpoint-down(md) {
+      height: 120px;
+
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
   }
 
   &__site-name {
@@ -34,6 +41,9 @@ export default class TheFooter extends Vue {}
     font-weight: 700;
     color: rgba(247, 223, 30, 0.6);
     font-size: 24px;
+    @include media-breakpoint-down(md) {
+      margin-bottom: 15px;
+    }
   }
 }
 </style>

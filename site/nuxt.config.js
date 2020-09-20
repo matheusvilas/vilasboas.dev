@@ -39,8 +39,16 @@ export default {
     // Doc: https://bootstrap-vue.js.org
     "bootstrap-vue/nuxt",
     // Doc: https://axios.nuxtjs.org/usage
-    "@nuxtjs/axios"
+    "@nuxtjs/axios",
+    "@nuxtjs/style-resources"
   ],
+  styleResources: {
+    scss: [
+      "@/assets/styles/_functions.scss",
+      "@/assets/styles/_variables.scss",
+      "@/assets/styles/_mixins.scss"
+    ]
+  },
   /*
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options

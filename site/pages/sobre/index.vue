@@ -5,15 +5,20 @@
       <div class="about__content">
         <h2 class="about__title">Sobre</h2>
         <p class="about__paragraph">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum a justo felis. Aliquam erat volutpat.
-          Vivamus a urna eu tortor sollicitudin varius. Maecenas placerat mauris ut quam accumsan, viverra lobortis metus egestas. Fusce blandit tincidunt felis quis consequat.
-          Nunc condimentum sem vitae enim rutrum, vel sagittis purus venenatis. Sed efficitur gravida vestibulum. Nullam euismod leo at ultricies venenatis. Proin tempor lacus sit amet suscipit fermentum.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum a
+          justo felis. Aliquam erat volutpat. Vivamus a urna eu tortor
+          sollicitudin varius. Maecenas placerat mauris ut quam accumsan,
+          viverra lobortis metus egestas. Fusce blandit tincidunt felis quis
+          consequat. Nunc condimentum sem vitae enim rutrum, vel sagittis purus
+          venenatis. Sed efficitur gravida vestibulum. Nullam euismod leo at
+          ultricies venenatis. Proin tempor lacus sit amet suscipit fermentum.
         </p>
         <social-link class="about__socials" />
         <h2 class="about__title">Skils</h2>
-        <p
-          class="about__paragraph"
-        >Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum a justo felis. Aliquam erat volutpat. Aliquam erat volutpat.</p>
+        <p class="about__paragraph">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum a
+          justo felis. Aliquam erat volutpat. Aliquam erat volutpat.
+        </p>
         <stack />
       </div>
     </div>
@@ -49,6 +54,11 @@ export default class About extends Vue {}
     height: 100%;
     z-index: -1;
     opacity: 0.6;
+
+    @include media-breakpoint-down(md) {
+      background-position: center left;
+      opacity: 0.2;
+    }
   }
 
   &__content {

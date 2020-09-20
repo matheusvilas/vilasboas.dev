@@ -1,5 +1,5 @@
 <template>
-  <article class="modal" :class="{'is-showing': isModalShowing}">
+  <article class="modal" :class="{ 'is-showing': isModalShowing }">
     <div class="modal__background"></div>
     <div class="modal__content">
       <div class="modal__button">
@@ -7,13 +7,13 @@
       </div>
       <div class="modal-container">
         <div class="modal__header">
-          <h2 class="modal__title">{{title}}</h2>
+          <h2 class="modal__title">{{ title }}</h2>
           <picture class="modal__banner">
             <img :src="img" alt="Flowers" style="width:auto;" />
           </picture>
         </div>
         <div class="modal__body">
-          <q>{{description}}</q>
+          <q>{{ description }}</q>
           <div class="modal__stack">
             <p>Stack</p>
             <stack />
@@ -36,7 +36,7 @@ import Stack from "./Stack.vue";
 import { IProjectModal } from "../types";
 
 @Component({
-  components: { Stack },
+  components: { Stack }
 })
 export default class Modal extends Vue {
   @Prop() modal!: IProjectModal;
@@ -110,7 +110,12 @@ export default class Modal extends Vue {
 
   &__body {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+
+    @include media-breakpoint-up(md) {
+      flex-direction: row;
+      justify-content: space-between;
+    }
 
     q {
       font-size: 18px;
@@ -124,6 +129,11 @@ export default class Modal extends Vue {
 
   &__stack {
     min-width: 118px;
+
+    @include media-breakpoint-down(md) {
+      margin-top: auto;
+    }
+
     p {
       font-size: 18px;
       font-weight: bold;
@@ -145,6 +155,11 @@ export default class Modal extends Vue {
     right: -38px;
     cursor: pointer;
 
+    @include media-breakpoint-down(md) {
+      top: 14px;
+      right: 20px;
+    }
+
     &-img {
       background: url("../assets/images/icon-close.svg");
       background-repeat: no-repeat;
@@ -154,6 +169,10 @@ export default class Modal extends Vue {
       outline: 0;
       padding: 0;
       background-size: contain;
+
+      @include media-breakpoint-down(md) {
+        filter: drop-shadow(0px 0px 1px black);
+      }
     }
   }
 
@@ -186,6 +205,14 @@ export default class Modal extends Vue {
     left: 50%;
     transform: translateX(-50%);
     border-radius: 15px;
+
+    @include media-breakpoint-down(md) {
+      width: 100%;
+      max-width: 100%;
+      height: 100%;
+      border-radius: 0;
+      top: 0;
+    }
   }
 }
 

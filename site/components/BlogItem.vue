@@ -38,13 +38,22 @@ export default class BlogItem extends Vue {
 
   &__group {
     max-height: 150px;
-    display: flex;
+
+    @include media-breakpoint-up(md) {
+      display: flex;
+    }
   }
 
   &__image {
-    width: 150px;
+    width: 100%;
+    object-fit: cover;
     height: 150px;
-    object-fit: contain;
+    padding: 16px 24px 0;
+    @include media-breakpoint-up(md) {
+      width: 150px;
+      object-fit: contain;
+      padding: 0;
+    }
   }
 
   &__title {
@@ -52,7 +61,9 @@ export default class BlogItem extends Vue {
     font-size: 24px;
     color: #f7f4f4;
     max-width: 450px;
-    height: 48px;
+    @include media-breakpoint-up(md) {
+      height: 48px;
+    }
   }
 
   &__content {
@@ -61,9 +72,15 @@ export default class BlogItem extends Vue {
     background: #000000c9;
 
     &--upper {
-      display: flex;
       align-items: flex-start;
       justify-content: space-between;
+
+      @include media-breakpoint-up(md) {
+        display: flex;
+      }
+      @include media-breakpoint-down(md) {
+        padding-bottom: 12px;
+      }
     }
   }
 
