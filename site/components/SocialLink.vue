@@ -1,28 +1,28 @@
 <template>
   <ul class="social-link">
     <li class="social-link__link">
-      <a href>
-        <img src="../assets/images/facebook.svg" alt />
+      <a href="https://twitter.com/vilasboasdev">
+        <twitter />
+      </a>
+    </li>
+
+    <li class="social-link__link">
+      <a href="https://www.facebook.com/matsvilas" target="_blank">
+        <facebook />
+      </a>
+    </li>
+
+    <li class="social-link__link">
+      <a
+        href="https://www.linkedin.com/in/matheus-dos-santos-vilas-boas-40599a116/"
+        target="_blank"
+      >
+        <linkedin />
       </a>
     </li>
     <li class="social-link__link">
-      <a href>
-        <img src="../assets/images/facebook.svg" alt />
-      </a>
-    </li>
-    <li class="social-link__link">
-      <a href>
-        <img src="../assets/images/facebook.svg" alt />
-      </a>
-    </li>
-    <li class="social-link__link">
-      <a href>
-        <img src="../assets/images/facebook.svg" alt />
-      </a>
-    </li>
-    <li class="social-link__link">
-      <a href>
-        <img src="../assets/images/facebook.svg" alt />
+      <a href="https://github.com/MatheusVilas" target="_blank">
+        <github />
       </a>
     </li>
   </ul>
@@ -30,8 +30,13 @@
 
 <script lang="ts">
 import { Vue, Component } from "vue-property-decorator";
+import Facebook from "./Facebook.vue";
+import Twitter from "./Twitter.vue";
+import Linkedin from "./Linkedin.vue";
+import Github from "./Github.vue";
+
 @Component({
-  components: {}
+  components: { Facebook, Twitter, Linkedin, Github }
 })
 export default class SocialLink extends Vue {}
 </script>
@@ -47,12 +52,6 @@ export default class SocialLink extends Vue {}
     a {
       width: 32px;
       height: 32px;
-
-      img {
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-      }
     }
   }
 }

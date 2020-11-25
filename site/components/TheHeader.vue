@@ -6,12 +6,12 @@
           <img class="header__img" src="../assets/images/astronaut.svg" alt />
         </nuxt-link>
         <ul class="header__list" :class="{ 'is-active': menuActive }">
-          <li
+          <!-- <li
             class="header__item"
             :class="{ 'is-active': $route.name === 'blog' }"
           >
             <nuxt-link to="/blog">DIÁRIO DE BORDO</nuxt-link>
-          </li>
+          </li> -->
           <li
             class="header__item"
             :class="{ 'is-active': $route.name === 'projetos' }"

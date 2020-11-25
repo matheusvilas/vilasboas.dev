@@ -5,19 +5,20 @@
       <div class="about__content">
         <h2 class="about__title">Sobre</h2>
         <p class="about__paragraph">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum a
-          justo felis. Aliquam erat volutpat. Vivamus a urna eu tortor
-          sollicitudin varius. Maecenas placerat mauris ut quam accumsan,
-          viverra lobortis metus egestas. Fusce blandit tincidunt felis quis
-          consequat. Nunc condimentum sem vitae enim rutrum, vel sagittis purus
-          venenatis. Sed efficitur gravida vestibulum. Nullam euismod leo at
-          ultricies venenatis. Proin tempor lacus sit amet suscipit fermentum.
+          Olá viajante,<br />
+          Bem vindo (à minha espaço nave). Este é o espaço que eu criei para
+          compartilhar conteúdos técnicos e as minhas histórias como
+          desenvolvedor e o percurso para eu chegar onde estou hoje, assim como
+          vocês eu estou em uma eterna linha de aprendizagem e espero poder
+          ajudar-los através de minhas mais diversas e caóticas vivências.
         </p>
         <social-link class="about__socials" />
-        <h2 class="about__title">Skils</h2>
+
         <p class="about__paragraph">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum a
-          justo felis. Aliquam erat volutpat. Aliquam erat volutpat.
+          Estou trabalhando com desenvolvimento faz +4 anos e durante este tempo
+          foquei a maior parte em desenvolvimento web.<br />
+          Porém no último ano eu comecei a trabalhar com Mobile e estou adorando
+          toda essa experiência.
         </p>
         <stack />
       </div>

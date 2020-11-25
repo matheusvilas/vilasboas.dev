@@ -13,14 +13,14 @@
           </picture>
         </div>
         <div class="modal__body">
-          <q>{{ description }}</q>
+          <q v-html="description" />
           <div class="modal__stack">
             <p>Stack</p>
             <stack />
           </div>
         </div>
         <div class="modal__footer">
-          <a :href="link">
+          <a :href="link" target="_blank">
             Visitar
             <img src="../assets/images/chevron-right.svg" alt />
           </a>
@@ -83,6 +83,10 @@ export default class Modal extends Vue {
   height: 100%;
   display: block;
 
+  strong {
+    color: red;
+  }
+
   &-container {
     padding: 34px 38px;
     height: 100%;
@@ -106,6 +110,7 @@ export default class Modal extends Vue {
     max-height: 270px;
     width: 100%;
     display: block;
+    overflow: hidden;
   }
 
   &__body {
