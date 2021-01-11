@@ -2,10 +2,10 @@
   "applinks": {
     "apps": [],
     "details": [
-    {
-      "appID": "br.com.heineken.myhnkapp",
-      "paths": ["*"]
-    }
+      {
+        "appID": "243NMDMXA7.br.com.heineken.myhnkapp",
+        "paths": ["/*/localized/route", "/static/route", "/blog/", "/blog"]
+      }
     ]
   }
 }
