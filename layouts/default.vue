@@ -1,10 +1,10 @@
 <template>
   <div>
-    <the-header />
+    <!-- <the-header /> -->
     <main>
       <nuxt />
     </main>
-    <the-footer />
+    <!-- <the-footer /> -->
   </div>
 </template>
 <script lang="ts">
@@ -13,7 +13,7 @@ import TheHeader from "../components/TheHeader.vue";
 import TheFooter from "../components/TheFooter.vue";
 
 @Component({
-  components: { TheHeader, TheFooter }
+  components: { TheHeader, TheFooter },
 })
 export default class Default extends Vue {}
 </script>
