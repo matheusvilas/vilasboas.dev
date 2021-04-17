@@ -14,7 +14,7 @@
       <div class="home__group">
         <img
           class="home__astronaut"
-          src="../assets/images/big-astronaut.png"
+          src="../../assets/images/big-astronaut.png"
           alt=""
         />
       </div>
@@ -26,7 +26,7 @@
 import Vue from "vue";
 
 export default Vue.extend({
-  components: {}
+  components: {},
 });
 </script>
 
