@@ -1,10 +1,10 @@
 <template>
   <div>
-    <the-header />
+    <!-- <the-header /> -->
     <main>
       <nuxt />
     </main>
-    <the-footer />
+    <!-- <the-footer /> -->
   </div>
 </template>
 <script lang="ts">
