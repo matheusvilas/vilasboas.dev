@@ -13,10 +13,7 @@
     </li>
 
     <li class="social-link__link">
-      <a
-        href="https://www.linkedin.com/in/matheus-dos-santos-vilas-boas-40599a116/"
-        target="_blank"
-      >
+      <a href="https://www.linkedin.com/in/matsvilas/" target="_blank">
         <linkedin />
       </a>
     </li>
