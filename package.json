@@ -23,7 +23,7 @@
   "devDependencies": {
     "@nuxt/typescript-build": "^0.6.0",
     "@types/nuxtjs__auth": "^4.8.4",
-    "node-sass": "^4.13.1",
+    "node-sass": "^7.0.0",
     "sass-loader": "^8.0.2"
   }
 }
